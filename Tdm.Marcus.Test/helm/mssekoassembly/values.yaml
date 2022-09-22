@@ -1,0 +1,4 @@
+deployment:
+  repository: mssekoassemblyacri.azurecr.io/website
+  tag: v1
+

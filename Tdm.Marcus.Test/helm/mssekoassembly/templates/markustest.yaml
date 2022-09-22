@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: markustest-deployment
+  namespace: default
+  labels:
+    app: markustest
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: markustest
+  template:
+    metadata:
+      labels:
+        app: markustest
+    spec:
+      containers:
+      - name: markustest
+        image: '{{ .Values.deployment.repository }}/markustestrepo:{{ .Values.deployment.tag }}'
+        ports:
+          - name: http
+            containerPort: 80
+            protocol: TCP
+        imagePullPolicy: Always
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: markustest-service
+  namespace: default
+spec:
+  type: LoadBalancer
+  selector:
+    app: markustest
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+      name: http
