@@ -4,7 +4,7 @@ name: Assembly Microservices Pipeline
 
 # Controls when the workflow will runs
 on:
-  # Triggers the workflow on push or pull request events but only for the "master" branch
+  # Triggers the workflow on push or pull request events but only for the "master" branch 
   push:
     branches: [ "master" ]
 
@@ -71,7 +71,7 @@ jobs:
           cluster-name: ${{ env.AKSNAME }}
        
       - name: Helm upgrade
-        run: helm upgrade mssekoassembly helm/mssekoassembly --install --set deployment.tag=${{ github.run_number }}
+        run: helm upgrade mssekoassembly Tdm.Marcus.Test/helm/mssekoassembly --install --set deployment.tag=${{ github.run_number }}
             
       # Runs a single command using the runners shell
       - name: Run a one-line script
