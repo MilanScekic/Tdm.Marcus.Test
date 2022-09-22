@@ -1,4 +1,4 @@
-# Workflow for the CI/CD pipeline for the SEKO Assembly prototype project
+# Workflow for the CI/CD pipeline for the Windows forms container prototype project
 
 name: Assembly Microservices Pipeline
 
@@ -14,7 +14,7 @@ on:
 env:
   ACRNAME: tdmsekoassemblyacr
   RGNAME: tdmsekoassemblyrg
-  AKSNAME: tdmsekoassemblyacraks
+  AKSNAME: tdmsekoassemblyaks
   CHART_OVERRIDE_PATH: ./helm/mssekoassembly/values.yaml
   CHART_OVERRIDES: ""
   CHART_PATH: ./helm/mssekoassembly/templates
