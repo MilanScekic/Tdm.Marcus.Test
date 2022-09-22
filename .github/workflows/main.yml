@@ -24,7 +24,7 @@ jobs:
   # This workflow contains a single job called "build"
   CI:
     # The type of runner that the job will run on
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -52,7 +52,7 @@ jobs:
         run: echo Done with the all image builds and pushes to the ACR!
         
   CD:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     needs: CI
     steps:
       - name: Git checkout
