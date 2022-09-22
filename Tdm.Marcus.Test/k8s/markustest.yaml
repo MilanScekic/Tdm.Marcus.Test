@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: markustest-deployment
+  namespace: default
+  labels:
+    app: markustest
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: markustest
+  template:
+    metadata:
+      labels:
+        app: markustest
+    spec:
+      containers:
+      - name: markustest
+        image: tdmsekoassemblyacr.azurecr.io/markustestrepo
+        ports:
+        - containerPort: 80
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: markustest-service
+  namespace: default
+spec:
+  type: LoadBalancer
+  selector:
+    app: markustest
+  ports:
+    - name: rmqadmin
+      protocol: TCP
+      port: 80
+      targetPort: 80
