@@ -2,7 +2,6 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-	<UseWindowsForms>true</UseWindowsForms>
     <UserSecretsId>a63d8ec3-b002-4b1d-aac9-b364ded4a405</UserSecretsId>
     <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
   </PropertyGroup>
